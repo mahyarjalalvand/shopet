@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  @font-face {
+    font-family: "Yekan";
+    font-style: normal;
+    font-weight: 100;
+    src: url("public/fonts/yekan-font/yekan.woff") format("woff");
+  }
+  @font-face {
+    font-family: "vazir";
+    font-style: normal;
+    font-weight: 300;
+    src: url("public/fonts/yekan-font/yekan.woff") format("woff");
+  }
+
+  @font-face {
+    font-family: "vazir";
+    font-style: normal;
+    font-weight: 400;
+    src: url("public/fonts/yekan-font/yekan-regular.woff") format("woff");
+  }
+  @font-face {
+    font-family: "vazir";
+    font-style: normal;
+    font-weight: 900;
+    src: url("public/fonts/yekan-font/yekan-regular.woff") format("woff");
+  }
+  body {
+    font-family: "Yekan", sans-serif;
+  }
+  .maxWidth {
+    @apply max-w-[1280px] m-auto;
+  }
+  .selected {
+    @apply border-2 border-dashed border-primary !bg-primary2;
+  }
+  .selected span {
+    @apply bg-primary;
+  }
+  .swiper-slide > div:hover,
+  .productContainer > div:hover {
+    @apply border-primary bg-primary2 transition-all duration-300;
+  }
+  .swiper-slide > div:hover .price,
+  .productContainer > div:hover .price {
+    @apply !text-primary transition-all duration-300;
+  }
+  .swiper-slide > div:hover .addBtn,
+  .productContainer > div:hover .addBtn {
+    @apply !bg-primary transition-all duration-300;
+  }
+  .productBanner::before {
+    @apply content-[""] size-full bg-[#e2eefe] border-2 border-dashed border-[#a3c9fd] rounded-3xl
+	absolute top-0 left-0 -z-10 -rotate-[5deg];
+  }
+  footer li:hover {
+    @apply text-primary transition-all duration-200;
+  }
+  #cart {
+    -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+  }
+  #cart:hover {
+    transform: translateY(10deg);
+  }
+}
